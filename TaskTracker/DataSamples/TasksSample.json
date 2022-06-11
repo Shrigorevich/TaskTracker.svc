@@ -1,0 +1,18 @@
+[
+  {
+    "Description": "Task sample 1",
+    "Status": 0,
+    "AssignedUser": "Roman"
+  },
+  {
+    "Description": "Task sample 2",
+    "Status": 1,
+    "AssignedUser": "Artem"
+  },
+  {
+    "Description": "Task sample 3",
+    "Status": 2,
+    "AssignedUser": "Max"
+  }
+]
+
