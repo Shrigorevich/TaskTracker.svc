@@ -11,5 +11,6 @@ namespace TaskTracker.DataAccess
         public TaskStatuses Status { get; set; }
         [MaxLength(100)]
         public string AssignedUser { get; set; }
+        public int SortIndex { get; set; }
     }
 }

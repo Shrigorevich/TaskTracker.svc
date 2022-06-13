@@ -11,8 +11,8 @@ using TaskTracker.DataAccess;
 namespace TaskTracker.DataAccess.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20220608180748_AddedValidation")]
-    partial class AddedValidation
+    [Migration("20220613153026_AddSortIndexColumn")]
+    partial class AddSortIndexColumn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -9,6 +9,5 @@ namespace TaskTracker.DataAccess
         {
 
         }
-
     }
 }

@@ -2,17 +2,20 @@
   {
     "Description": "Task sample 1",
     "Status": 0,
-    "AssignedUser": "Roman"
+    "AssignedUser": "Roman",
+    "SortIndex": 0
   },
   {
     "Description": "Task sample 2",
     "Status": 1,
-    "AssignedUser": "Artem"
+    "AssignedUser": "Artem",
+    "SortIndex": 1
   },
   {
     "Description": "Task sample 3",
     "Status": 2,
-    "AssignedUser": "Max"
+    "AssignedUser": "Max",
+    "SortIndex": 2
   }
 ]
 
