@@ -19,6 +19,10 @@ namespace TaskTracker.Controllers
             _taskContext = taskContext;
         }
 
+        /// <summary>
+        /// Get all tasks
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("")]
         public ActionResult GetTasks()
         {
@@ -26,6 +30,11 @@ namespace TaskTracker.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Get task by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
         public ActionResult GetTaskById(int id)
         {
@@ -33,6 +42,11 @@ namespace TaskTracker.Controllers
             return result != null ? Ok(result) : NotFound();
         }
 
+        /// <summary>
+        /// Create task
+        /// </summary>
+        /// <param name="task"></param>
+        /// <returns></returns>
         [HttpPost("")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public ActionResult CreateTask([FromBody] WorkTask task)
@@ -50,6 +64,11 @@ namespace TaskTracker.Controllers
             }
         }
 
+        /// <summary>
+        /// Update task
+        /// </summary>
+        /// <param name="task"></param>
+        /// <returns></returns>
         [HttpPut("")]
         public ActionResult UpdateTask([FromBody] WorkTask task)
         {
@@ -64,7 +83,11 @@ namespace TaskTracker.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Delete task by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id:int}")]
         public ActionResult DeleteTask(int id)
         {
@@ -83,15 +106,17 @@ namespace TaskTracker.Controllers
             }
         }
 
-        private void LoadSampleData()
+        /// <summary>
+        /// Test endpoint. Does not interact with DB
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut("test")]
+        public ActionResult Test()
         {
             string fileData = System.IO.File.ReadAllText("./DataSamples/TasksSample.json");
             var tasks = JsonSerializer.Deserialize<List<WorkTask>>(fileData);
-            if (!_taskContext.Tasks.Any())
-            {
-                _taskContext.AddRangeAsync(tasks);
-                _taskContext.SaveChanges();
-            }
+
+            return Ok(tasks);   
         }
     };
 }
